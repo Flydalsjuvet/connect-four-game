@@ -18,11 +18,11 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
 const makeBoard = () => {
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array
 
-  for (let i = 0; i < HEIGHT; i++){
+  for (let i = 0; i < HEIGHT; i++) {
     board[i] = [];
-      for (let j = 0; j < WIDTH; j++){
-        board[i][j] = null;
-      }
+    for (let j = 0; j < WIDTH; j++) {
+      board[i][j] = null;
+    }
   }
 
 }
@@ -65,12 +65,18 @@ const makeHtmlBoard = () => {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
-  return 0;
+  return ;
 }
 
 /** placeInTable: update DOM to place piece into HTML table of board */
 
 function placeInTable(y, x) {
+  debugger
+  const chip = document.createElement("div");
+  chip.className="piece";
+  chip.setAttribute("currentplayer","1")
+  const cell = document.getElementById(`${y}-${x}`);
+  cell.append(chip);
   // TODO: make a div and insert into correct table cell
 }
 

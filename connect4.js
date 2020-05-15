@@ -64,7 +64,12 @@ const makeHtmlBoard = () => {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
-  return 0;
+
+  for (let i = HEIGHT - 1; i >= 0; i--) {
+    if (board[i][x] === null)
+      return i;
+  }
+  return null
 }
 
 /** placeInTable: update DOM to place piece into HTML table of board */
@@ -96,6 +101,7 @@ function handleClick(evt) {
   if (y === null) {
     return;
   }
+  
 
   // place piece in board and add to HTML table
   // TODO: add line to update in-memory board
